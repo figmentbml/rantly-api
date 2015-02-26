@@ -1,4 +1,13 @@
 class RantsController < ApplicationController
+  before_action :set_rant, only: [:show]
+
+  def index
+    render json: Rant.all
+  end
+
+  def show
+    render json: @rant
+  end
 
   private
 
