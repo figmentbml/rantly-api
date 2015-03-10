@@ -2,7 +2,14 @@ class RantsController < ApplicationController
   before_action :set_rant, only: [:show]
 
   def index
-    render json: Rant.all
+    render json: Rant.all.order(created_at: :desc)
+  end
+
+  def create
+    @rant = Rant.new(rant_params)
+    @rant.save
+    render json: @rant
+
   end
 
   def show
