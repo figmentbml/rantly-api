@@ -28,6 +28,7 @@ class RantsController < ApplicationController
   end
 
   def destroy
+    @rant.delete
     render json: {}
   end
 
