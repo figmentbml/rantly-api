@@ -1,5 +1,5 @@
 class RantsController < ApplicationController
-  before_action :set_rant, only: [:show]
+  before_action :set_rant, only: [:show, :update, :destroy]
 
   def index
     render json: Rant.all.order(created_at: :desc)
@@ -14,6 +14,15 @@ class RantsController < ApplicationController
 
   def show
     render json: @rant
+  end
+
+  def update
+    @rant.update(rant_params)
+    render json: @rant
+  end
+
+  def destroy
+    render json: {}
   end
 
   private
