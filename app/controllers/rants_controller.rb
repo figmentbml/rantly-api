@@ -2,7 +2,13 @@ class RantsController < ApplicationController
   before_action :set_rant, only: [:show, :update, :destroy]
 
   def index
+    searched = params[:find]
+    if searched
+      @filtered = Rant.where("title LIKE ? OR body LIKE ?", "%#{searched}%", "%#{searched}%")
+      render json: @filtered
+    else
     render json: Rant.all.order(created_at: :desc)
+    end
   end
 
   def create
