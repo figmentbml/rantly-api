@@ -1,5 +1,6 @@
 class RantsController < ApplicationController
   before_action :set_rant, only: [:show, :update, :destroy]
+  skip_before_action :require_login, only: [:index]
 
   def index
     searched = params[:find]

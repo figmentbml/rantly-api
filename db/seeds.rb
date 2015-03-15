@@ -13,28 +13,34 @@ minnie = User.create!(
   first_name: 'Minnie',
   last_name: 'Mouse',
   email: 'minnie@email.com',
-  password: 'password'
+  password: 'password',
+  password_confirmation: 'password'
 )
 
 mickey = User.create!(
 first_name: 'Mickey',
 last_name: 'Mouse',
 email: 'mickey@email.com',
-password: 'password'
+password: 'password',
+password_confirmation: 'password'
 )
 
 donald = User.create!(
 first_name: 'Donald',
 last_name: 'Duck',
 email: 'donald@email.com',
-password: 'password'
+password: 'password',
+password_confirmation: 'password'
+
 )
 
 daisy = User.create!(
 first_name: 'Daisy',
 last_name: 'Duck',
 email: 'daisy@email.com',
-password: 'password'
+password: 'password',
+password_confirmation: 'password'
+
 )
 
 Rant.create!(

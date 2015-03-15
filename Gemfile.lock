@@ -59,6 +59,7 @@ GEM
       activesupport (>= 3.0.0, < 5)
       multi_json (~> 1.2)
     json (1.8.2)
+    jwt (1.4.1)
     loofah (2.0.1)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -139,6 +140,7 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   byebug
   jbuilder (~> 2.0)
+  jwt (= 1.4.1)
   pg
   rack-cors
   rails (= 4.2.0)
