@@ -16,7 +16,6 @@ class RantsController < ApplicationController
     @rant = Rant.new(rant_params)
     @rant.save
     render json: @rant
-
   end
 
   def show
