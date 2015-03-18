@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show]
+  skip_before_action :require_login, only: [:index, :show]
 
   def index
     render json: User.all

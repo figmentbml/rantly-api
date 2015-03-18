@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   before_action :require_login
 
   def current_user
-    # byebug
     if request.headers['Authorization']
       decoded_auth_token = JWT.decode(request.headers['Authorization'], nil, false)
       User.find_by(id: decoded_auth_token[0]["user_id"])
