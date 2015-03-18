@@ -37,7 +37,7 @@ password_confirmation: 'password'
 daisy = User.create!(
 first_name: 'Daisy',
 last_name: 'Duck',
-email: 'daisy@email.com',
+email: 'beth.jaswa@gmail.com',
 password: 'password',
 password_confirmation: 'password'
 
