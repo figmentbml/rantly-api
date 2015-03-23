@@ -1,6 +1,7 @@
 class RantsController < ApplicationController
   before_action :set_rant, only: [:show, :update, :destroy]
   skip_before_action :require_login, only: [:index, :show]
+  before_action :rant_match, only: [:update, :destroy]
 
   def index
     searched = params[:find]
@@ -21,7 +22,7 @@ class RantsController < ApplicationController
       render json: @rant
     end
   end
-  
+
   def show
     render json: @rant
   end
