@@ -4,14 +4,19 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by_email(params[:session][:email])
-    login = user.authenticate(params[:session][:password])
-    if login then
-      session[:user_id] = user.id
-      session[:authToken] = generate_auth_token(user.id)
-      render json: { session: { success: true, token: session[:authToken], user_id: session[:user_id] } }
+    if user
+      login = user.authenticate(params[:session][:password])
+      if login then
+        session[:user_id] = user.id
+        session[:authToken] = generate_auth_token(user.id)
+        render json: { session: { success: true, token: session[:authToken], user_id: session[:user_id] } }
+      else
+        render json: { session: { success: false, error: "Invalid Username/Password" } }
+      end
     else
       render json: { session: { success: false, error: "Invalid Username/Password" } }
     end
+
   end
 
   def generate_auth_token(user)
