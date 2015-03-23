@@ -13,14 +13,15 @@ class RantsController < ApplicationController
   end
 
   def create
-    if current_user
+    user = current_user
+    if user
       @rant = Rant.new(rant_params)
-      @rant.user_id = current_user.id
+      @rant.user_id = user.id
       @rant.save
       render json: @rant
     end
   end
-
+  
   def show
     render json: @rant
   end
