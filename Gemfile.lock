@@ -55,9 +55,6 @@ GEM
       activesupport (>= 4.1.0)
     hike (1.2.3)
     i18n (0.7.0)
-    jbuilder (2.2.8)
-      activesupport (>= 3.0.0, < 5)
-      multi_json (~> 1.2)
     json (1.8.2)
     jwt (1.4.1)
     loofah (2.0.1)
@@ -139,7 +136,6 @@ DEPENDENCIES
   active_model_serializers
   bcrypt (~> 3.1.7)
   byebug
-  jbuilder (~> 2.0)
   jwt (= 1.4.1)
   pg
   rack-cors
